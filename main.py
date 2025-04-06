@@ -1,5 +1,26 @@
-# TODO: (Bautista) Create the menu of choices and a switch case statement 
-# that matches the options in the menu.
+records = [
+    {
+        "title": "Snow white", 
+        "genre": "fantasy", 
+        "rating": 1.3, 
+        "director": "Marc Webb",
+        "release": 2025,
+    },
+    {
+        "title": "Oppenheimer", 
+        "genre": "historical", 
+        "rating": 8.3, 
+        "director": "Christopher Nolan",
+        "release": 2023,
+    },
+    {
+        "title": "The Dark Knight", 
+        "genre": "superhero", 
+        "rating": 9.0, 
+        "director": "Christopher Nolan",
+        "release": 2008,
+    },
+]
 
 # TODO: (Bautista) Create the list all functionality and print the contents in
 # a pleasant and formatted way
