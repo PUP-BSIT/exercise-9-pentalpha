@@ -36,30 +36,30 @@ records = [
 # TODO: (Raymundo) Create a delete function that deletes the chosen record
 
 while True:
-    print("+ ==================== +")
-    print("| Welcome to MovieList |")
-    print("+ ======= Menu ======= +")
-    print("|   [1] List All       |")
-    print("|   [2] Add            |")
-    print("|   [3] Update         |")
-    print("|   [4] Delete         |")
-    print("|   [5] Search         |")
-    print("|   [6] Exit           |")
-    print("+ ==================== +")
-    user_choice = int(input("Enter your choice: "))
+    print("+ ========================== +")
+    print("|    Welcome to MovieList    |")
+    print("+ ========== Menu ========== +")
+    print("|        [1] List All        |")
+    print("|        [2] Add             |")
+    print("|        [3] Update          |")
+    print("|        [4] Delete          |")
+    print("|        [5] Search          |")
+    print("|        [6] Exit            |")
+    print("+ ========================== +")
+    user_choice = input("Enter your choice: ")
     
     match user_choice:
-        case 1:
+        case '1':
             print("List All")
-        case 2:
+        case '2':
             print("Add")
-        case 3:
+        case '3':
             print("Update") 
-        case 4:
+        case '4':
             print("Delete")
-        case 5:
+        case '5':
             print("Search")
-        case 6:
+        case '6':
             print("Exiting...")
             break
         case _:
