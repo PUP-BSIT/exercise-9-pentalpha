@@ -84,11 +84,12 @@ def search(records):
     index = 0
     for item in records:
         if item["title"].lower() == title:
-            print(f"The index is {index}.")
-            print(f"The genre is {item['genre']}.")
-            print(f"The rating is {item['rating']}.")
-            print(f"The director is {item['director']}.")
-            print(f"The release date was on {item['release']}.")
+            print(f"Index: {index}")
+            print(f"Title: {item['title']}")
+            print(f"Genre: {item['genre']}")
+            print(f"Rating: {item['rating']}")
+            print(f"Directed by: {item['director']}")
+            print(f"Released: {item['release']}")
             return index
         index += 1
     print("Movie cannot be found.")
@@ -122,7 +123,7 @@ while True:
         case '4':
             print("Delete")
         case '5':
-            print("Search")
+            search(records)
         case '6':
             print("Exiting...")
             break
