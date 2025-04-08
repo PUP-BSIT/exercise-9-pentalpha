@@ -127,8 +127,42 @@ def update_movie(records):
         
     print("Movie updated successfully.")
 
+def delete_record(records):
+    if not records:
+        print("\nNo movie records to delete.")
+        return
 
-# TODO: (Raymundo) Create a delete function that deletes the chosen record
+    while True:
+        title = input("\nEnter the movie title to delete: ").strip().lower()
+
+        for movie in records:
+            if movie["title"].lower() == title:
+                print(f"\nFound: {movie['title']} ({movie['release']})")
+                
+                confirm_in = input("Delete this movie? (yes/no): ")
+                confirm = confirm_in.strip().lower()
+
+                if confirm == "yes":
+                    records.remove(movie)
+                    print("\nMovie deleted successfully.")
+                else:
+                    print("\nMovie not deleted.")
+                break
+        else:
+            print("\nMovie not found.")
+
+        print("\nUpdated Movie Records:")
+        list_all_records(records)
+
+        if not records:
+            print("\nNo more movies in the list.")
+            break
+
+        another = input("\nDelete another? (yes/no): ").strip().lower()
+        if another != "yes":
+            break
+
+    input("\nPress Enter to continue...")
 
 while True:
     print("+ ========================== +")
@@ -151,7 +185,7 @@ while True:
         case '3':
             update_movie(records)
         case '4':
-            print("Delete")
+            delete_record(records)
         case '5':
             search(records)
         case '6':
