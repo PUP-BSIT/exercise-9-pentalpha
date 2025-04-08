@@ -95,8 +95,38 @@ def search(records):
     print("Movie cannot be found.")
     return
 
-# TODO: (Banzali) Create an update function to change the 
-# fields of the chosen record
+def update_movie(records):
+    index = search(records)
+
+    if index == None:
+        return
+    
+    movie = records[index]
+    print("\nWhat do you want to update?")
+    print("[1] Title")
+    print("[2] Genre")
+    print("[3] Rating")
+    print("[4] Director")
+    print("[5] Release")
+    update_choice = int(input("Enter choice: "))
+
+    match update_choice:
+        case 1:
+            movie["title"] = input("Enter new title: ").strip()
+        case 2:
+            movie["genre"] = input("Enter new genre: ").strip()
+        case 3:
+            movie["rating"] = float(input("Enter new rating: "))
+        case 4:
+            movie["director"] = input("Enter new director: ").strip()
+        case 5:
+            movie["release"] = int(input("Enter new release year: "))
+        case _:
+            print("Wrong input.")
+            return
+        
+    print("Movie updated successfully.")
+
 
 # TODO: (Raymundo) Create a delete function that deletes the chosen record
 
@@ -112,14 +142,14 @@ while True:
     print("|        [6] Exit            |")
     print("+ ========================== +")
     user_choice = input("Enter your choice: ")
-    
+
     match user_choice:
         case '1':
             list_all_records(records)
         case '2':
             records = add_movie(records)
         case '3':
-            print("Update") 
+            update_movie(records)
         case '4':
             print("Delete")
         case '5':
