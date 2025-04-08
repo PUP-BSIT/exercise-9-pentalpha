@@ -36,8 +36,17 @@ records = [
     },
 ]
 
-# TODO: (Bautista) Create the list all functionality and print the contents in
-# a pleasant and formatted way
+def list_all_records(records):
+    print("=" * 80)
+    print("|      Title         |      Genre      | Rating |    Director    |",
+            "    Date    ")
+    print("=" * 80)
+    for item in records:
+        print(f"{item['title']:^20}{item['genre']:^20}{item['rating']:^6.1f}",
+                f" {item['director']:^20}{item['release']:^6}")    
+
+    print("=" * 80)
+    input("\nPress any key to continue...")
 
 # TODO: (Managbanag) Create a function that will add new records to the list
 
@@ -64,7 +73,7 @@ while True:
     
     match user_choice:
         case '1':
-            print("List All")
+            list_all_records(records)
         case '2':
             print("Add")
         case '3':
