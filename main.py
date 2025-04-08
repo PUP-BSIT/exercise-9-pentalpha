@@ -1,24 +1,38 @@
 records = [
     {
         "title": "Snow white", 
-        "genre": "fantasy", 
+        "genre": "Fantasy", 
         "rating": 1.3, 
         "director": "Marc Webb",
         "release": 2025,
     },
     {
         "title": "Oppenheimer", 
-        "genre": "historical", 
+        "genre": "Historical", 
         "rating": 8.3, 
         "director": "Christopher Nolan",
         "release": 2023,
     },
     {
         "title": "The Dark Knight", 
-        "genre": "superhero", 
+        "genre": "Superhero", 
         "rating": 9.0, 
         "director": "Christopher Nolan",
         "release": 2008,
+    },
+    {
+        "title": "The Karate Kid", 
+        "genre": "Action", 
+        "rating": 6.2, 
+        "director": "Harald Zwart",
+        "release": 2010,
+    },
+    {
+        "title": "Hachi: A Dog's Tale", 
+        "genre": "Animal adventure", 
+        "rating": 8.1, 
+        "director": "Lasse Hallström",
+        "release": 2009,
     },
 ]
 
