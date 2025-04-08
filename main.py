@@ -79,8 +79,20 @@ def add_movie(records):
     print(f"Movie '{title}' added successfully!")
     return records
 
-# TODO: (Espinola) Create a search function that returns the index 
-# of the found item
+def search(records):
+    title = input("Enter movie title to find: ").strip().lower()
+    index = 0
+    for item in records:
+        if item["title"].lower() == title:
+            print(f"The index is {index}.")
+            print(f"The genre is {item['genre']}.")
+            print(f"The rating is {item['rating']}.")
+            print(f"The director is {item['director']}.")
+            print(f"The release date was on {item['release']}.")
+            return index
+        index += 1
+    print("Movie cannot be found.")
+    return
 
 # TODO: (Banzali) Create an update function to change the 
 # fields of the chosen record
