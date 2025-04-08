@@ -39,7 +39,7 @@ records = [
 def list_all_records(records):
     print("=" * 80)
     print("|      Title         |      Genre      | Rating |    Director    |",
-            "    Date    ")
+            "    Date    |")
     print("=" * 80)
     for item in records:
         print(f"{item['title']:^20}{item['genre']:^20}{item['rating']:^6.1f}",
@@ -48,7 +48,36 @@ def list_all_records(records):
     print("=" * 80)
     input("\nPress any key to continue...")
 
-# TODO: (Managbanag) Create a function that will add new records to the list
+def add_movie(records):
+    title = input("Enter Title: ").strip()
+    genre = input("Enter Genre: ").strip()
+
+    rating_input = float(input("Enter Rating: ").strip())
+    if rating_input:
+        rating = float(rating_input)
+    else:
+        print("Invalid rating. Setting to 0.0")
+        rating = 0.0
+
+    director = input("Enter Director: ").strip()
+
+    release_input = input("Enter Release Year: ").strip()
+    if release_input.isdigit():
+        release = int(release_input)
+    else:
+        print("Invalid release year. Setting to 2025")
+        release = 2025
+
+    new_movie = {
+        "title": title,
+        "genre": genre,
+        "rating": rating,
+        "director": director,
+        "release": release,
+    }
+    records.append(new_movie)
+    print(f"Movie '{title}' added successfully!")
+    return records
 
 # TODO: (Espinola) Create a search function that returns the index 
 # of the found item
@@ -75,7 +104,7 @@ while True:
         case '1':
             list_all_records(records)
         case '2':
-            print("Add")
+            records = add_movie(records)
         case '3':
             print("Update") 
         case '4':
